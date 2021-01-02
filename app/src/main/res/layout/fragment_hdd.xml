@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#fff"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="55dp"
+    android:layout_height="match_parent">
 
-    >
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_marginTop="55dp"
+        app:corner_radius="5"
+        app:placeholder="@drawable/h1"
+        app:error_image="@drawable/h2"
+        app:auto_cycle="true"
+        app:period="1500"
+        app:delay="1"
+        android:layout_height="210dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/hdd_recyclerview"
@@ -19,4 +27,4 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_view" />
 
-</RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

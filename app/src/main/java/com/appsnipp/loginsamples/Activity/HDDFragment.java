@@ -22,8 +22,11 @@ import com.appsnipp.loginsamples.Adapter.RecyclerViewAdapter;
 import com.appsnipp.loginsamples.Data.DatabaseManager;
 import com.appsnipp.loginsamples.Model.Product;
 import com.appsnipp.loginsamples.R;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HDDFragment extends Fragment {
 
@@ -37,11 +40,19 @@ public class HDDFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_hdd, container, false);
         context = container.getContext();
+
+        ImageSlider imageSlider = view.findViewById(R.id.slider);
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.galaxy1));
+        slideModels.add(new SlideModel(R.drawable.galaxy2));
+        slideModels.add(new SlideModel(R.drawable.galaxy3));
+        slideModels.add(new SlideModel(R.drawable.galaxy4));
+        imageSlider.setImageList(slideModels, true);
+
         myRecyclerView =  view.findViewById(R.id.hdd_recyclerview);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,ProductList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecyclerView.setAdapter(recyclerViewAdapter);
-
 
         return view;
     }

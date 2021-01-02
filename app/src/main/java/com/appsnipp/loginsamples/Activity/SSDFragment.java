@@ -23,6 +23,8 @@ import com.appsnipp.loginsamples.Model.Category;
 import com.appsnipp.loginsamples.Model.Product;
 import com.appsnipp.loginsamples.Model.Users;
 import com.appsnipp.loginsamples.R;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,10 +41,19 @@ public class SSDFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sdd, container, false);
         context = container.getContext();
 
+        ImageSlider imageSlider = view.findViewById(R.id.slider);
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.galaxy1));
+        slideModels.add(new SlideModel(R.drawable.galaxy2));
+        slideModels.add(new SlideModel(R.drawable.galaxy3));
+        slideModels.add(new SlideModel(R.drawable.galaxy4));
+        imageSlider.setImageList(slideModels, true);
+
         myRecyclerView =  view.findViewById(R.id.ssd_recyclerview);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(context,ProductList);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecyclerView.setAdapter(recyclerViewAdapter);
+
         return view;
     }
 
