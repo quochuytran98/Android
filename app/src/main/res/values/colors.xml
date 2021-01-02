@@ -10,6 +10,8 @@
     <color name="loginBkColor">#f0f0f0</color>
 
     <!--colros for card-->
+    <color name="yellow">#FBC02D</color>
+    <color name="red">#FF1100</color>
     <color name="whiteCardColor">#fff</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

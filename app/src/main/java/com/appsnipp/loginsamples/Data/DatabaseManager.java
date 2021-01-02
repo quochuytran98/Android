@@ -102,6 +102,14 @@ public class DatabaseManager extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(" select * from users where email = ?", new  String[]{email });
         return cursor;
     }
+
+    public Cursor getAllProducts(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String qry = " select * from product";
+        Cursor cursor = db.rawQuery(qry, null);
+        return cursor;
+    }
+
     public Cursor GetSSD(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery( "select * from product where id_cate = 1",null);
